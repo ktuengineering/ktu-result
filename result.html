@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>University Examination Result Portal</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #eef2f7;
+  margin: 0;
+}
+header {
+  background: #003366;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+.container {
+  width: 95%;
+  max-width: 900px;
+  background: white;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+input {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+}
+button {
+  padding: 10px;
+  width: 100%;
+  background: #007b00;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-size: 14px;
+}
+table, th, td {
+  border: 1px solid black;
+}
+th, td {
+  padding: 6px;
+  text-align: center;
+}
+#resultBox {
+  display: none;
+  margin-top: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<header>University Examination Result Portal - B.Tech S5 Examination</header>
+
+<div class="container">
+<h3>Enter Student Details</h3>
+
+<input id="reg" placeholder="Register Number">
+<input id="dob" placeholder="Date of Birth (DD/MM/YYYY)">
+<button onclick="showResult()">View Result</button>
+
+<div id="resultBox">
+<h3>Student Result</h3>
+
+<p><b id="studentName"></b></p>
+<p><b id="studentReg"></b></p>
+
+<table>
+<tr>
+<th>Course Code</th>
+<th>Course Name</th>
+<th>Credits</th>
+<th>Grade</th>
+</tr>
+
+<tr><td>EE301</td><td>Power Systems I</td><td>4</td><td>B</td></tr>
+<tr><td>EE303</td><td>Signals and Systems</td><td>4</td><td>C</td></tr>
+<tr><td>EE305</td><td>Synchronous and Induction Machines</td><td>4</td><td>B</td></tr>
+<tr><td>EE307</td><td>Microprocessors and Microcontrollers</td><td>3</td><td>B</td></tr>
+<tr><td>EE309</td><td>Management for Engineers</td><td>3</td><td>C</td></tr>
+
+<tr><td>EE381</td><td>Microprocessor and Microcontroller Lab</td><td>2</td><td>B</td></tr>
+<tr><td>EE383</td><td>Electrical Machines Lab II</td><td>2</td><td>B</td></tr>
+<tr><td>EE385</td><td>CVS2 Lab (Control & Virtual Systems Lab)</td><td>2</td><td>C</td></tr>
+
+</table>
+
+<p id="sgpa"></p>
+<p id="status"></p>
+
+</div>
+
+</div>
+
+<script>
+function showResult() {
+  let reg = document.getElementById("reg").value;
+  let dob = document.getElementById("dob").value;
+
+  if(reg=="UNT23EE026" && dob=="01/01/2006") {
+    document.getElementById("resultBox").style.display = "block";
+    document.getElementById("studentName").innerHTML = "Name: K. Reshma";
+    document.getElementById("studentReg").innerHTML = "Register Number: UNT23EE026";
+    document.getElementById("sgpa").innerHTML = "<b>SGPA: 6.85</b>";
+    document.getElementById("status").innerHTML = "<b>Status: PASS</b>";
+  }
+  else {
+    alert("No record found. Please check Register Number or Date of Birth.");
+  }
+}
+</script>
+
+</body>
+</html>
